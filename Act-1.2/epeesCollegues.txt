@@ -1,0 +1,48 @@
+Algorithme epeesCollegues
+
+Variables collegues = tableau[1..12] de chaine de caractères <- ["Alban", "Jim", "Bob", "Albatroz", "Jinto", "Bow", "Hijo", "Manu", "Seb", "Teilo", "Charles", "Xavier"]
+
+var i,j :entier;
+	    x: chaine de caractère
+
+Début
+
+	
+
+	pour i allant de 1 à 11 faire
+
+		pour j allant de 12 à i+1 par pas de -1 faire
+
+
+			ind1 <- 1
+			ind2 <- 1
+			etat <- faux
+
+			tant que ( ind1<longueurT[j]+1 et ind2<longueurT[j-1]+1  et etat==faux)
+
+				si (T[j][ind1] < T[j-1][ind2]) alors
+
+					etat <- vrai
+					x <- T[j]
+					T[j] <- T[j-1]
+					T[j-1] <- x
+
+				sinon si (T[j][ind1] > T[j-1][ind2])	
+	
+					etat <- vrai
+
+				sinon
+
+					ind1 <- ind1+1
+					ind2 <- ind2+1
+
+				finsi
+
+			fin tant que
+
+		finpour
+
+	finpour
+
+
+Fin 

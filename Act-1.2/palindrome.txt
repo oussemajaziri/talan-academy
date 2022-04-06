@@ -1,0 +1,48 @@
+Algorithme palindrome
+
+
+fonction verifPalindrome (ch:chaine_de_caractère) : booléen;
+
+	var res :booléen;
+            ch2 :chaine_de_caractère;
+
+  	début
+
+    		ch2 <- ""
+		res <- vrai
+
+    		pour i allant de longueur(ch) à 1 par pas de -1 faire
+      			ch2[i] <- ch2 + ch[i]
+    		finpour
+
+		pour j allant de 1 à longueur(ch) faire
+
+			si (ch2[j] != ch[j]) alors
+				res <- faux
+			finsi
+
+    		finpour
+
+    		retourner(res);
+  	fin
+
+finfonction
+
+
+
+Variables nom : chaine de caractère;
+          etat : booléen
+
+Début
+
+	afficher("Donnez votre nom :")
+	saisir(nom)
+	
+	etat <- verifPalindrome (nom)	
+	si (etat==vrai) alors
+		afficher("le nom est palindrome")
+	sinon
+		afficher("le nom n'est pas palindrome")
+	finsi
+	
+Fin 

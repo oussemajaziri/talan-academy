@@ -1,0 +1,32 @@
+Algorithme ageMoussaillons
+
+Variables ages = tableau[1..8] d'entiers <- [45, 54, 23, 32, 64, 46, 28, 82]
+
+var i,j,ind :entier;
+
+Début
+
+		
+		pour i allant de 1 à N-1 faire
+
+			ind = i;
+
+ 			pour j allant de i+1 à N faire
+
+      				si T[j]>T[ind] alors
+
+        				ind = j;
+
+      				finsi
+
+    			finpour
+
+			x <- T[ind]
+			T[ind] <- T[i]
+			T[i] <- x
+
+
+		finpour
+
+	
+Fin 
