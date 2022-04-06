@@ -1,0 +1,3 @@
+Activité 1.1.2: complexité = 1
+Activité 1.1.3: complexité = 58
+Activité 1.1.4: complexité = 8

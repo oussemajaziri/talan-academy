@@ -1,0 +1,26 @@
+Algorithme grandNb 
+ 
+Variables max,x: entier
+
+
+Début
+
+	afficher("Donnez le nombre numero 1 :")
+	saisir(x)
+
+	max <- x
+
+	pour i de 1 à 19 faire
+
+		afficher("Donnez le nombre numero (i+1) :")
+		saisir(x)
+
+			si (x > max) alors
+			max <- x
+			fsi
+
+	fpour
+
+	afficher("le maximum des nombres saisies est ",max )
+
+Fin 

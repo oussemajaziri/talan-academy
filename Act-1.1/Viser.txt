@@ -1,0 +1,34 @@
+Algorithme viser
+ 
+Variables angleEnnemi,x,nbrEssai: entier 
+          resultat: booléen
+	 
+Début
+
+	angleEnnemi <- alea(1,50)
+
+	resultat <- faux
+
+	nbrEssai <- 0
+
+
+	tantque (resultat==faux et nbrEssai<5) faire 
+		
+		nbrEssai <- nbrEssai+1
+
+        	afficher("Entrez la position de l'ennemi:")
+		saisir(x)
+		
+		si (x == angleEnnemi) alors
+			resultat <- vrai
+			afficher ("bravo vous avez coulé votre ennemi")
+		sinon si (x < angleEnnemi)
+			afficher ("Aide : l'angle est plus petit")
+		sinon 
+			afficher ("Aide : l'angle est plus grand")
+		finsi
+
+    	fintantque
+
+
+Fin 

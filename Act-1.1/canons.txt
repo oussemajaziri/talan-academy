@@ -1,0 +1,16 @@
+Algorithme nbrSalves
+
+Constantes (nbrCanons : réel) ←24 
+           (cadence : réel) ←12.5 
+           (tmpsSurvie : réel) ←35 
+ 
+Variables nbrSalves : réel 
+
+
+Début
+
+	nbreSalves <- [(tmpsSurvie*60)/cadence]*nbrCanons
+
+	afficher("le nombre de salves",nbrSalves)
+
+Fin 
