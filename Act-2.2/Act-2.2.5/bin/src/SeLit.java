@@ -26,24 +26,23 @@ public class SeLit {
 		   BufferedReader reader = new BufferedReader (fileReader);
 		   
 		   ArrayList<String> byLines = new ArrayList();
-		   ArrayList<String> paths = new ArrayList();
+		   ArrayList<String> ps = new ArrayList();
 		   LinkedList<String> textALenvers = new LinkedList();
 		   
-		   try {
-			   String line = reader.readLine();
-			   String path = "monFichier_L";
+		 
+			   String line;
+			   String p;
+			
 			   
-			   while (line!=null) {
-				   line=reader.readLine();
+			   
+			   
+			   while ((line = reader.readLine()) !=null) {
 				   textALenvers.addFirst(line);
-				   path="path" + ".txt";
-				   paths.add(path);
+				   p="path" + ".txt";
+				   ps.add(p);
 				   byLines.add(line);
 			   }
-		   } catch (IOException e) {
-			   e.printStackTrace();		  
-		   }
-		   
+		 
 		   
 		      for(String elem: byLines)
 		       {
@@ -61,19 +60,7 @@ public class SeLit {
 		      System.out.println();
 		      System.out.println();
 		      
+		  	       
 		      
-		      /**
-		      
-		      for(int i=0;i<paths.size()-1;i++)
-		       {
-		    	   File myObj = new File("line.txt"); 
-		    	   Writer fileWriter = new FileWriter ("line.txt");
-				   BufferedWriter writer = new BufferedWriter (fileWriter);
-				   writer.write(byLines.get(i));
-				   System.out.println(byLines.get(i));
-		    	  
-		       }  
-		       
-		       */
 	   }
 }
