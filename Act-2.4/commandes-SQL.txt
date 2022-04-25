@@ -1,0 +1,59 @@
+
+
+////////manque library ///////////
+
+CREATE TABLE book (
+id BIGSERIAL NOT NULL,
+title CHAR(80) NOT NULL,
+author CHAR(80) NOT NULL,
+editor CHAR(80) NOT NULL,
+page_nb int NOT NULL,
+library_id int NOT NULL,
+summary VARCHAR(300) NOT NULL,
+PRIMARY KEY(id),
+CONSTRAINT FK_LibraryBook FOREIGN KEY (library_id)
+    REFERENCES library(id)
+);
+
+
+
+
+INSERT INTO book VALUES (1,'Head First Java', 'Kathy Sierra', 'O''Reilly',720,1 , 'Head First Java is a complete learning experience for object-oriented (OO) programming and Java.');
+
+INSERT INTO book VALUES (2,'Head First Design Patterns', 'Elisabeth Freeman', 'O''Reilly', 676, 2, 'If you want to distinguish yourself from ordinary developers and become a force of proposition for the architectures of applications, you must master the design patterns. For this, nothing beats the experience of those who have already faced the same problems.');
+
+INSERT INTO book VALUES (3,'Effective Java', 'Joshua Bloch', 'Addison-Wesley Professional', 412,1, 'Since this Jolt-award winning classic was last updated in 2008 (shortly after Java 6 was released), Java has changed dramatically. ');
+
+INSERT INTO book VALUES (4,'Clean Code: A Handbook of Agile Software Craftsmanship', 'Robert C. Martin', 'Prentice Hall', 288, 2, 'Even bad code can function. But if code isn''t clean, it can bring a development organization to its knees.');
+
+
+CREATE TABLE "user" (
+id BIGSERIAL NOT NULL,
+prenom CHAR(80) NOT NULL,
+nom CHAR(80) NOT NULL,
+addresse CHAR(150) NOT NULL,
+numTel CHAR(14) NOT NULL,
+mail CHAR(50) NOT NULL,
+PRIMARY KEY(id)
+);
+
+
+INSERT INTO "user" VALUES (1,'Corsaire', 'Moussaillon', 'Rues des caraïbes', '0456895231', 'corsaire@moussaillon.com');
+
+INSERT INTO "user" VALUES (2,'Pirate', 'Navire', 'Triangle des bermudes', '0456895232', 'pirate@mbermude.com');
+
+
+
+CREATE TABLE rent (
+id BIGSERIAL NOT NULL,
+date_pret DATE NOT NULL,
+date_fin DATE NOT NULL,
+user_id int REFERENCES "user"(id) NOT NULL,
+book_id int REFERENCES book(id) NOT NULL,
+PRIMARY KEY (id)
+);
+
+
+INSERT INTO rent VALUES (1, '2019-05-12 12:30:25', '2019-07-12 16:30:25', 1,1);
+
+INSERT INTO rent VALUES (2, '2019-05-18 17:30:25', '2019-07-18 14:30:25', 2,2);
