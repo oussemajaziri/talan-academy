@@ -1,0 +1,87 @@
+
+CREATE DATABASE vintud;
+
+
+=============================================================
+
+CREATE TABLE role(
+id BIGSERIAL NOT NULL PRIMARY KEY,
+nom VARCHAR(30) NOT NULL
+);
+
+
+INSERT INTO role VALUES (1, 'CLIENT');
+
+=============================================================
+
+CREATE TABLE users(
+id BIGSERIAL NOT NULL PRIMARY KEY,
+first_name VARCHAR(80) NOT NULL,
+last_name VARCHAR(80) NOT NULL,
+pseudo VARCHAR(80) NOT NULL,
+mail VARCHAR(80) NOT NULL,
+u_password VARCHAR(80) NOT NULL,
+phone VARCHAR(14) NOT NULL,
+address VARCHAR(80) NOT NULL,
+role_id BIGINT NOT NULL REFERENCES role(id)
+);
+
+
+INSERT INTO users VALUES (1, 'Pirate', 'Caraïbes', 'Johny', 'johnyPirate@Cara.com', 'unmotdepassedepirate', '1563214560', 'Entre l''atlantic et le pacific.',1);
+INSERT INTO users VALUES (2, 'Corsaire', 'THP', 'George', 'george@Cara.com', 'unmotdepassedecorsaire', '1563214561', 'Entre la manche et la mer du nord.',1);
+INSERT INTO users VALUES (3, 'Moussaillon', 'Java', 'Coding', 'coding@Cara.com', 'unmotdepassedemoussaillon', '1563214562', 'Sur la méditérranée.',1);
+
+=============================================================
+
+CREATE TABLE category(
+id BIGSERIAL NOT NULL PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+description VARCHAR(255) NOT NULL
+);
+
+INSERT INTO category VALUES (1, 'T-SHIRT', 'Vêtement léger souvent mis l''été.');
+INSERT INTO category VALUES (2, 'Pantalon', 'Vêtement du bas du corp mis pour couvrir ses jambres.');
+INSERT INTO category VALUES (3, 'Veste', 'Vêtement chaud.');
+
+=============================================================
+
+CREATE TABLE announcement(
+id BIGSERIAL NOT NULL PRIMARY KEY,
+title VARCHAR(50) NOT NULL,
+description VARCHAR(750) NOT NULL,
+category_id BIGINT NOT NULL REFERENCES category(id),
+price DOUBLE PRECISION NOT NULL,
+picture VARCHAR ,
+publication_date DATE NOT NULL,
+is_available BOOLEAN NOT NULL,
+view_number INT NOT NULL,
+localisation VARCHAR(100),
+user_id BIGINT NOT NULL REFERENCES users(id)
+);
+
+
+INSERT INTO announcement VALUES (1, 't-shirt lacuste bon état', 'Je vends mon magnifique t-shirt lacuste acheté l''année dernière en solde, taille M.',1,24.98,NULL,'2019-01-25 8:32:12', true, 2,'Paris 9ième',1);
+INSERT INTO announcement VALUES (2, 'Veste Guoss comme nueve', 'Je vends ma sublime veste Guoss achetée cette année en solde, taille S.',3,87.25,NULL,'2019-02-25 11:32:12', true, 8,'Paris 9ième',2);
+
+
+=============================================================
+
+CREATE TABLE favoris(
+id BIGSERIAL NOT NULL PRIMARY KEY,
+annonce_id BIGINT NOT NULL REFERENCES announcement(id),
+user_id BIGINT NOT NULL REFERENCES users(id),
+favory_date DATE NOT NULL
+);
+
+=============================================================
+
+
+CREATE TABLE Recherche(
+id BIGSERIAL NOT NULL PRIMARY KEY,
+category_id BIGINT NOT NULL REFERENCES category(id),
+taille VARCHAR(25),
+couleur VARCHAR(25),
+prix_mini DECIMAL,
+prix_maxi DECIMAL,
+user_id BIGINT NOT NULL REFERENCES users(id)
+);
