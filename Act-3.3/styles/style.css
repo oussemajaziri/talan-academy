@@ -1,0 +1,428 @@
+body {
+  background: linear-gradient(180deg, black 25%, white 40%);
+}
+
+/* HEADER */
+header {
+  z-index: 1;
+  height: 80px;
+  /* padding: 0px 90px; */
+  box-shadow: 0px 0px 1px 0px #000;
+  background: black;
+  color: white;
+}
+
+header>.links {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+header>.links>button {
+  border: none;
+  background: none;
+  padding: 0px 10px;
+}
+
+header>.links>button>div {
+  position: relative;
+  color: white;
+}
+
+header>.links>button:hover>div::before, header>.links>button.active>div::before {
+  content: '';
+  width: 90%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 5%;
+  bottom: -10px;
+}
+
+header>.links>button:hover>div {
+  color: #ccc;
+}
+
+header>.links>button:hover>div::before {
+  background: #ccc;
+}
+
+.btn-hote {
+  background: transparent;
+  border-radius: 40px;
+  padding: 0px 15px;
+  color: white;
+  height: 45px;
+  border: none;
+  margin: 0px 5px;
+}
+
+.btn-hote:hover {
+  background: rgb(108, 107, 107);
+}
+
+.btn-login {
+  background: white;
+  color: #555;
+}
+
+.svg-icon {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.btn-login>svg {
+  width: 20px !important;
+  height: 20px !important;
+  margin: 3px;
+}
+
+/* SEARCH BAR */
+.search-bar>div {
+  height: 80px;
+  border-radius: 70px;
+  margin: 50px;
+}
+
+.search-bar>div>div {
+  border-radius: 30px;
+  height: 80px;
+  background: white;
+  width: 100%;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.search-bar>div>div:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.search-bar>div>div::before {
+  content: '';
+  width: 2px;
+  height: 60px;
+  background: #ccc;
+  position: absolute;
+  left: 0px;
+}
+
+.search-bar>div>div:first-child::before {
+  display: none;
+}
+
+.search-bar>div>div>input {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  outline: #333;
+}
+
+.ukrain-block {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.ukrain-text {
+  /* margin:7px; */
+  /* width: 80%; */
+  padding: 20px;
+  border-radius: 15px;
+  height: 400px;
+  background: #ff385c;
+  color: white;
+}
+
+.ukrain-text>button {
+  margin-top: 15px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background: white;
+  color: #333 !important;
+}
+
+.fixed-header>.links {
+  display: none;
+}
+
+.fixed-header>.links {
+  display: none;
+}
+
+.search-bar-scroll {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background: white;
+  width: 300px;
+  height: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 2px 1px #333;
+  position: fixed;
+  left: 50%;
+  top: 15px;
+  transform: translate(-50%);
+}
+
+.search-icon {
+  background: #ff385c;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-bar {
+  transform: translate(-130px);
+  max-height: 70px;
+  width: 70px;
+}
+
+.icon-bar>svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.search-bar-scroll>.search-bar>svg {
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+
+.search-bar-scroll-active {
+  z-index: 1;
+  display: flex;
+  animation: move .6s;
+}
+
+@keyframes move {
+  from {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 80%;
+  }
+
+  /* to{ position: absolute; left:50%; top:90px;} */
+}
+
+.divIm2 {
+  z-index: 0;
+  z-index: 0;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  margin-left: 10%;
+  margin-right: 10%
+}
+
+.im2 {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.textIm2 {
+  position: relative;
+  margin: auto;
+  top: -200px;
+  color: white;
+}
+
+.divButton2{
+  margin-top: 55px;
+}
+
+.button2 {
+  width: 20%;
+  text-align: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: purple;
+  padding-left:10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+ 
+
+.divIdee{
+  position:relative;
+  float:left;
+  width: 25%;
+}
+
+.divIdee2{
+  position:relative;
+  float:left;
+  width: 25%;
+}
+
+
+
+.divExperiences {
+  z-index: 0;
+  z-index: 0;
+  margin-top: 90px;
+  margin-bottom: 100px;
+  margin-left: 10%;
+  margin-right: 10%
+}
+
+
+.divimgExp1{
+  position:relative;
+  float:left;
+  width: 45%;
+  margin-right: 2.5%
+}
+
+.divimgExp2{
+  position:relative;
+  margin-left: 2.5%;
+  float:left;
+  width: 45%;
+}
+
+
+.imgExp{
+  border-radius: 15px;
+}
+
+
+.texExp {
+  position:absolute;
+  width: 40%;
+  font-size: 40px;
+  font-weight: bold;
+  top: 30px;
+  left: 30px;
+  color: white;
+}
+
+.divButton3{
+  position:absolute;
+  top: 300px;
+  left: 30px;
+  color: white;
+}
+
+.button3{
+  width: auto;
+  text-align: center;
+  background: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: black;
+  padding-left:10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.divCarteAirbnb {
+  z-index: 0;
+  z-index: 0;
+  margin-top: 100px;
+  margin-left: 10%;
+  margin-right: 10%
+}
+
+.divTextCarteAirbnb{
+  float:left;
+  width: 25%;
+  font-size: 25;
+}
+
+.buttonCarteAirbnb{
+  color: white;
+  background-color: black;
+  border-radius:10px;
+  padding: 7px;
+}
+
+.divImgCarteAirbnb{
+  float:left;
+  width: 75%;
+}
+
+
+
+footer {
+    background-color: #F7F7F7;
+    margin-top: 700px;
+}
+
+#footer1,
+#footer2 {
+    display: flex;
+    justify-content: space-around;
+    width: 93%;
+    margin: auto;
+    font-size: 13px;
+}
+
+footer li {
+    list-style: none;
+    margin: 17px 0;
+}
+
+footer h6 {
+    padding-top: 50px;
+    margin-left: 32px;
+}
+
+hr {
+    width: 80%;
+    margin: 25px auto;
+}
+
+#footer2 ul,
+#footer2 ul li {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-link {
+    color: rgb(117, 117, 117);
+    border: none !important;
+    margin-bottom: 11px !important;
+    padding: 0 !important;
+    /* position: relative; */
+}
+
+.nav-link:hover {
+    color: rgb(117, 117, 117) !important;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+}
+
+.nav-item {
+    position: relative;
+    margin-right: 17px !important;
+}
+
+.nav-tabs .active:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    /* or 100px */
+    border-bottom: 2px solid rgb(97, 97, 97);
+}
